@@ -1,9 +1,4 @@
-gitdb==4.0.7
-GitPython==3.1.24
-matplotlib==3.3.4
-numpy==1.20.2
 pandas==1.2.4
-pip==21.1.2
-plotnine==0.8.0
 scikit-learn==0.24.2
-
+numpy
+streamlit 
