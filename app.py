@@ -110,7 +110,7 @@ if nav == "Prediction":
     proba = clf_LR.predict_proba(user_input)[0]
 
     if st.button("Predict"):
-        st.success(f'Your client will leave your institution in three months time with a probability of: {round(proba[1], 2)}')
+        st.success(f'Your client will remain as an active client of your institution in three months time with a probability of: {round(proba[1], 2)}')
 
 if nav == "Contribute":
     st.header("Thank you for contributing to our dataset.")
