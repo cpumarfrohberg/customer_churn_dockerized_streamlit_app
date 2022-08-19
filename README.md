@@ -27,7 +27,7 @@ This project is based on a cooperation with a Savings Bank ("Caja Municipal de A
 
 ## Future Updates
 - [ ] dockerize
-- [ ] run Artificial Neural Network
+- [ ] train a model based on predictive features for churn of **Loan Officers** (instead of clients themselves)
 
 ## Author
 
