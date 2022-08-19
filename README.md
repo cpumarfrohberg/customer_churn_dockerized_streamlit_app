@@ -21,7 +21,10 @@ This project is based on a cooperation with a Savings Bank ("Caja Municipal de A
 * 4. artefacts folder containing pickled model
 * 5. streamlit app
 
-## In order to run the models
+## In order to run the app
+- [streamlit app](https://cpumarfrohberg-customer-churn-app-app-l4ixej.streamlitapp.com/)
+
+## In order to run the models locally
 - clone repo locally
 - create an environment with the contents of the requirements.txt file (if you are using conda: install pip first via "conda install pip" and then "pip install -r requirements.txt")
 
