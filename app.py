@@ -21,7 +21,8 @@ st.title("Customer Churn Predictor")
 
 nav = st.sidebar.radio(
     "Please chose one of the following:",
-    ["Home", "EDA", "Prediction", "Contribute"])
+    ["Home", "EDA", "Prediction"]
+    ) #"Contribute"]
 
 if nav == "Home":
     st.markdown(
