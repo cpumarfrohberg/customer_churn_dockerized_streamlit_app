@@ -110,19 +110,19 @@ if nav == "Prediction":
     proba = clf_LR.predict_proba(user_input)[0]
 
     if st.button("Predict"):
-        st.success(f'Your client will remain as an active client of your institution in three months time with a probability of: {round(proba[1], 2)}')
+        st.success(f'Your client will leave your institution in three months time with a probability of: {round(proba[1], 2)}')
 
-if nav == "Contribute":
-    st.header("Thank you for contributing to our dataset.")
-    departure_LO = st.number_input("Enter the number of months that your LO has left the bank", 0, 24)
-    departure_client = st.number_input("Enter the number of months that your client has left the bank", 0, 24)
-    if st.button("Submit"):
-        to_add = {
-            "TimeDepartureLO": departure_LO, 
-            "TimeDepartureClient": departure_client,
-            }
-        to_add = pd.DataFrame(to_add)
-        to_add.to_csv("./data/Tabla_01_English_Unique_postEDA.csv", mode = "a", header = False, index = False)
-        st.success("Submitted")
+# if nav == "Contribute":
+#     st.header("Thank you for contributing to our dataset.")
+#     departure_LO = st.number_input("Enter the number of months that your LO has left the bank", 0, 24)
+#     departure_client = st.number_input("Enter the number of months that your client has left the bank", 0, 24)
+#     if st.button("Submit"):
+#         to_add = {
+#             "TimeDepartureLO": departure_LO, 
+#             "TimeDepartureClient": departure_client,
+#             }
+#         to_add = pd.DataFrame(to_add)
+#         to_add.to_csv("./data/Tabla_01_English_Unique_postEDA.csv", mode = "a", header = False, index = False)
+#         st.success("Submitted")
 
 
