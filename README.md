@@ -24,12 +24,19 @@ This project is based on a cooperation with a Savings Bank ("Caja Municipal de A
 ## In order to run the app
 - [customer churn Savings Bank](https://cpumarfrohberg-customer-churn-app-app-l4ixej.streamlitapp.com/)
 
-## In order to run the models locally
+## In order to run the models locally in designated environment
 - clone repo locally
 - create an environment with the contents of the requirements.txt file (if you are using conda: install pip first via "conda install pip" and then "pip install -r requirements.txt")
 
+## In order to run the models locally in a docker container
+- clone repo locally
+- build image with
+`docker build -t streamlitchurnapp:latest -f docker/Dockerfile`
+- run image with
+`docker run -p 8502:8501 streamlitchurnapp:latest`
+
 ## Future Updates
-- [ ] dockerize
+- [ ] CLI app for model fit
 - [ ] train a model based on predictive features for churn of **Loan Officers** (instead of clients themselves)
 
 ## Author
