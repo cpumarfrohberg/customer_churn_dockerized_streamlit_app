@@ -82,14 +82,11 @@ if __name__ == "__main__":
     print("making predictions on X_train and X_val")
     pred_X_train = predictions(
         fit_model = fit_model_X_train,
-        X = X_train,
-        y = y_train
+        X = X_train
         )
     pred_X_val = predictions(
         fit_model = fit_model_X_val,
-        X = X_val,
-
-        y = y_val
+        X = X_val
         )
     f1_score_train = f1_score(y_train, pred_X_train).round(2)
     f1_score_val = f1_score(y_val, pred_X_val).round(2)
