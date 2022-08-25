@@ -33,7 +33,7 @@ This project is based on a cooperation with a Savings Bank ("Caja Municipal de A
 - build image with
 `docker build -t streamlitchurnapp:latest -f docker/Dockerfile .`
 - run image with
-`docker run -p 8502:8501 streamlitchurnapp:latest`
+`docker run -p 8501:8501 streamlitchurnapp:latest`
 
 ## Future Updates
 - [ ] CLI app for model fit
