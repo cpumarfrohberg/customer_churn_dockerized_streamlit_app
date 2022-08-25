@@ -31,7 +31,7 @@ This project is based on a cooperation with a Savings Bank ("Caja Municipal de A
 ## In order to run the models locally in a docker container
 - clone repo locally
 - build image with
-`docker build -t streamlitchurnapp:latest -f docker/Dockerfile`
+`docker build -t streamlitchurnapp:latest -f docker/Dockerfile` .
 - run image with
 `docker run -p 8502:8501 streamlitchurnapp:latest`
 
