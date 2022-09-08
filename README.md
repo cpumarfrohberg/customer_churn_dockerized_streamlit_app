@@ -10,7 +10,7 @@ This project is based on a cooperation with a Savings Bank ("Caja Municipal de A
 * 3. variables related to the so-called "RFM"- methodology often used in practice for classifying customers into different groups. 
 
 * However, and based on model fit of a Random Forest Classifier, the following features resulted as having greatest importance
-* 1. what was the employment status of the LO 6 months prior?
+* 1. employment status of the LO 6 months prior?
 * 2. expectations regarding the employment status of the LO 3 months into the future?
 * 3. expectation regarding the employment status of the LO 6 months into the future?
 
