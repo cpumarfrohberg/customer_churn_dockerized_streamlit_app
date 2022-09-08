@@ -34,7 +34,7 @@ This project is based on a cooperation with a Savings Bank ("Caja Municipal de A
 `docker build -t streamlitchurnapp:latest -f docker/Dockerfile .`
 - run image with
 `docker run -p 8501:8501 streamlitchurnapp:latest`
-- map your localhost to port 8501 in your browser
+- in your web browser: map your localhost to port 8501 in container (127.0.0.1:8501)
 
 
 ## Future Updates
