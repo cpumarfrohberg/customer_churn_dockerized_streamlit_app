@@ -21,14 +21,14 @@ This project is based on a cooperation with a Savings Bank ("Caja Municipal de A
 * 4. artefacts folder containing pickled model
 * 5. streamlit app
 
-## In order to run the app
+## For running the app on streamlit cloud
 - [customer churn Savings Bank](https://cpumarfrohberg-customer-churn-app-app-l4ixej.streamlitapp.com/)
 
 ## In order to run the models locally in designated environment
 - clone repo locally
 - create an environment with the contents of the requirements.txt file (if you are using conda: install pip first via "conda install pip" and then "pip install -r requirements.txt")
 
-## In order to run the models locally in a docker container
+## For running the app in a docker container
 - clone repo locally
 - build image with
 `docker build -t streamlitchurnapp:latest -f docker/Dockerfile .`
