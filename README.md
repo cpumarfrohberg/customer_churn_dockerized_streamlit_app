@@ -34,6 +34,8 @@ This project is based on a cooperation with a Savings Bank ("Caja Municipal de A
 `docker build -t streamlitchurnapp:latest -f docker/Dockerfile .`
 - run image with
 `docker run -p 8501:8501 streamlitchurnapp:latest`
+- map your localhost to port 8501 in your browser
+
 
 ## Future Updates
 - [ ] CLI app for model fit
