@@ -8,6 +8,8 @@ from sklearn.metrics import confusion_matrix, roc_auc_score, f1_score
 
 import pickle
 import time
+import warnings
+warnings.filterwarnings("ignore")
 
 from utils import df, include_timestamps, model_fit, predictions
 
