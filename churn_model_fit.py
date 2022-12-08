@@ -6,7 +6,7 @@ import packages.model_trainer as mt
 
 def main():
     # 0. Path to data
-    PATH = "../data/Tabla_01_English_Unique_postEDA.csv"
+    PATH = "./data/Tabla_01_English_Unique_postEDA.csv"
 
     # 1. Prep data
     prepped_data = dp.prepare_data(PATH)
