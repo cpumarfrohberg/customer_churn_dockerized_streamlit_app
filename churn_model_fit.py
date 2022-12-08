@@ -13,10 +13,11 @@ def main():
 
     # 2. Split data
     X_train_FE, X_val_FE, y_train, y_val = dp.split_data(
-        prepped_data["feature_engineered_training_set"],
-        prepped_data["feature_engineered_validation_set"],
-        prepped_data["labels_training_set"],
-        prepped_data["labels_validation_set"]
+        prepped_data["feature_matrix"],
+        prepped_data["labels"],
+        0.2,
+        42,
+        prepped_data["labels"]
         )
 
     # 3. Fit model
