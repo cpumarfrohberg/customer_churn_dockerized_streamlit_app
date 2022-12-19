@@ -16,8 +16,8 @@ This project is based on a cooperation with a Savings Bank ("Caja Municipal de A
 
 ## Content of the project
 * 1. data directory
-* 2. EDA 
-* 3. model fit (including feature importance with Random Forest Classifier)
+* 2. EDA (including feature importance)
+* 3. model fit 
 * 4. artefacts folder containing pickled model
 * 5. package directory including utils
 * 6. streamlit app
