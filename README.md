@@ -19,10 +19,8 @@ This project is based on a cooperation with a Savings Bank ("Caja Municipal de A
 * 2. EDA (in separate notebook)
 * 3. model fit (including feature importance with Random Forest Classifier)
 * 4. artefacts folder containing pickled model
-* 5. streamlit app
-
-## For running the app on streamlit cloud
-- [customer churn Savings Bank](https://cpumarfrohberg-customer-churn-app-app-l4ixej.streamlitapp.com/)
+* 5. package directory including utils
+* 6. streamlit app
 
 ## For running the models locally in designated environment
 - clone repo locally
@@ -34,7 +32,7 @@ This project is based on a cooperation with a Savings Bank ("Caja Municipal de A
 `docker build -t streamlitchurnapp:latest -f docker/Dockerfile .`
 - run image with
 `docker run -p 8501:8501 streamlitchurnapp:latest`
-- in your web browser: map your localhost to port 8501 in container (127.0.0.1:8501)
+- in your web browser: map your localhost to port 8501 in container
 
 
 ## Future Updates
