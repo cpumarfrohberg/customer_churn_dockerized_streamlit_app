@@ -6,7 +6,7 @@ import streamlit as st
 import pickle
 
 
-MODEL_FILE = "./artefacts/churn-model.bin"
+MODEL_FILE = "./artifacts/churn-model.bin"
 INDEX = [0]
 
 
