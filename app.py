@@ -22,7 +22,7 @@ st.title("Customer Churn Predictor")
 nav = st.sidebar.radio(
     "Please chose one of the following:",
     ["Home", "EDA", "Prediction"]
-    ) #"Contribute"]
+    ) 
 
 if nav == "Home":
     st.markdown(
@@ -59,7 +59,6 @@ if nav == "Prediction":
     """
     )
 
-    # TODO: include table, but based on the main features, i.e. the features used for model fit
     @st.cache
     def load_model():
         print("loading the model")
