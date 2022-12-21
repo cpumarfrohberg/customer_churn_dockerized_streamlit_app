@@ -31,7 +31,7 @@ if nav == "Home":
     ##### Its main objective consists in identifying the most relevant features in predicting churn of SME clients as well as making predictions three months into the future.
     """
     )
-    st.image("CMAC.jpg", width=100)
+    st.image("./images/CMAC.jpg", width=100)
 
 if nav == "EDA":
     st.write("Welcome to the section on Exploratory Data Analysis.")
