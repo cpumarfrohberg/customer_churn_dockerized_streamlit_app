@@ -1,9 +1,8 @@
+import pickle
 import pandas as pd
 import numpy as np
 
 import streamlit as st
-
-import pickle
 
 
 MODEL_FILE = "./artifacts/churn-model.bin"
@@ -86,10 +85,25 @@ if nav == "Prediction":
         max_value = 1,
         )
 
+    col4, col5= st.columns(2)
+    
+    month = col4.number_input(
+    "Which month are you interested in considering (insert '1' for January, etc.)?", 
+    min_value = 1,
+    max_value = 12,
+    )
+    year = col5.number_input(
+    "Which year are you interested in considering (chose between '2018' and '2020')?", 
+    min_value = 2018,
+    max_value = 2022,
+    )
+
     user_input = {
         "LO_active_past_6": int(active_past_6),
         "LO_active_post_3": int(active_post_3),
-        "LO_active_post_6": int(active_post_6)
+        "LO_active_post_6": int(active_post_6),
+        "month": int(month),
+        "year": int(year),
         }
 
     user_input = pd.DataFrame(
@@ -105,9 +119,4 @@ if nav == "Prediction":
 
     if st.button("Predict"):
         st.success(f'Your client will leave your institution in three months time with a probability of: {round(proba[1], 2)}')
-
-
-
-
-
 
