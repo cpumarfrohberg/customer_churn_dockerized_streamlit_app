@@ -31,7 +31,7 @@ if nav == "Home":
     ##### Its main objective consists in identifying the most relevant features in predicting churn of SME clients as well as making predictions three months into the future.
     """
     )
-    #st.image("CMAC.jpg", width=100)
+    st.image("CMAC.jpg", width=100)
 
 if nav == "EDA":
     st.write("Welcome to the section on Exploratory Data Analysis.")
@@ -44,12 +44,6 @@ if nav == "EDA":
         churn_series = churn_history["Client_Churn"]
         churn_series = churn_series[churn_history.index.year >= val]
         st.line_chart(churn_series)
-    # if st.checkbox("Click here to see the time series of monetary features"):
-    #     val = st.slider("Filter data using years", 2018, 2021)
-    #     monetary_series = rfm.groupby(["Year"])["n(Loans)_Outstanding_Maynas"].mean()
-    #     monetary_series = monetary_series[monetary_series.index >= val]
-    #     st.line_chart(monetary_series)
-
 
 if nav == "Prediction":
     st.markdown(

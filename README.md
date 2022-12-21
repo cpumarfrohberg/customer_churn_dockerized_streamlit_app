@@ -18,8 +18,8 @@ This project is based on a cooperation with a Savings Bank ("Caja Municipal de A
 * 1. data directory
 * 2. EDA (including feature importance)
 * 3. model fit 
-* 4. artefacts folder containing pickled model
-* 5. package directory including utils
+* 4. artifacts folder containing pickled model
+* 5. `utils.py`
 * 6. streamlit app
 
 ## For running the models locally in designated environment
@@ -36,7 +36,7 @@ This project is based on a cooperation with a Savings Bank ("Caja Municipal de A
 
 
 ## Future Updates
-- [ ] CLI app for model fit
+- [ ] Feature engineer for retraining `Logistic Regression`
 - [ ] train a model based on predictive features for churn of **Loan Officers** (instead of clients themselves)
 
 ## Author
