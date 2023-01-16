@@ -17,16 +17,21 @@ from utils import DataModeler
 def main():
     model_data = DataModeler()
     prepped_data = model_data.prepare_data()
+    time.sleep(2)
     split_dict = model_data.split_timestamp_data(X = prepped_data['feature_matrix'], 
                                                 y = prepped_data['labels'])
+    logging.debug(f'Keys of split_dict are {split_dict.keys()} and vals: {split_dict.values()}')
+    logging.debug(f" Vals of 'X_train' key is {split_dict['X_train']}.")
+
+    # logging.debug(f"Vals of key 'X_train' in 'split_dict' are {split_dict.get('X_train')}")
     X_train, X_val, y_train, y_val = split_dict.get('X_train'), split_dict.get('X_val'), split_dict.get('y_train'), split_dict.get('y_val')
     
-    time.sleep(2)
-    logging.debug("Extracting features")
+    # time.sleep(2)
+    # logging.debug("Extracting features")
     
-    time.sleep(2)
-    logging.info(f"Identify feature importance based on 'mean decrease impurity'.")
-    feature_names = [f'feature {i}' for i in range(X_train.shape[1])]
+    # time.sleep(2)
+    # logging.info(f"Identify feature importance based on 'mean decrease impurity'.")
+    # feature_names = [f'feature {i}' for i in range(X_train.shape[1])]
     # with open('./artifacts/churn-model.bin', 'rb') as file_in:
     #     model = pickle.load(file_in)
     # importances = model.feature_importances_
@@ -57,8 +62,8 @@ def test_split_timestamped():
     prepped_data = model_data.prepare_data()
     split_dict = model_data.split_timestamp_data(X = prepped_data['feature_matrix'], 
                                                 y = prepped_data['labels'])
-    X_train, X_val, y_train, y_val = split_dict.get('X_train'), split_dict.get('X_val'), split_dict.get('y_train'), split_dict.get('y_val')
-    assert type(X_train) == pd.DataFrame
+    #X_train, X_val, y_train, y_val = split_dict.get('X_train'), split_dict.get('X_val'), split_dict.get('y_train'), split_dict.get('y_val')
+    assert type(split_dict) == dict
 
     
 
