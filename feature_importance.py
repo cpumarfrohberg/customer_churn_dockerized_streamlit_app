@@ -11,20 +11,16 @@ from sklearn.inspection import permutation_importance
 
 logging.basicConfig(level = logging.DEBUG)
 
-from utils import DataModeler
+from utils import DataModeler #TODO; import PATH_TO_ARTIFACTS
 
 
 def main():
-    model_data = DataModeler()
-    prepped_data = model_data.prepare_data()
+    model_data = DataModeler() #TODO: implement class for handling transformed dataset - reading in of transformed dataset
     time.sleep(2)
     split_dict = model_data.split_timestamp_data(X = prepped_data['feature_matrix'], 
-                                                y = prepped_data['labels'])
-    logging.debug(f'Keys of split_dict are {split_dict.keys()} and vals: {split_dict.values()}')
-    logging.debug(f" Vals of 'X_train' key is {split_dict['X_train']}.")
+                                                y = prepped_data['labels']) #TODO: 
 
-    # logging.debug(f"Vals of key 'X_train' in 'split_dict' are {split_dict.get('X_train')}")
-    X_train, X_val, y_train, y_val = split_dict.get('X_train'), split_dict.get('X_val'), split_dict.get('y_train'), split_dict.get('y_val')
+    X_train, X_val, y_train, y_val = split_dict.get('X_train_fe'), split_dict.get('X_val_fe'), split_dict.get('y_train'), split_dict.get('y_val')
     
     # time.sleep(2)
     # logging.debug("Extracting features")
