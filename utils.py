@@ -1,9 +1,8 @@
 import pandas as pd
-import pytest
-from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 
-PATH = './artifacts/Tabla_01_English_Unique_postEDA.csv' #TODO: change path for reading in transforme dataset
+PATH = './data/Tabla_01_English_Unique_postEDA.csv'
 
 WEIGHTS = {0:0.41, 1:0.59}
 
@@ -39,10 +38,17 @@ class DataModeler():
             }
 
     def model_fit(self, X_train, y_train, weights):
-        '''Return fitted Logistic Regression model.'''
-        clf_LR = LogisticRegression(class_weight = weights, random_state=42) 
-        clf_LR.fit(X_train, y_train)
-        return clf_LR
+        '''Return fitted Random Forest model.'''
+        clf_RF = RandomForestClassifier(
+            class_weight = weights, 
+            random_state=42,
+            n_estimators=100,
+            max_depth=10,
+            min_samples_split=5,
+            min_samples_leaf=2
+        ) 
+        clf_RF.fit(X_train, y_train)
+        return clf_RF
 
     def predictions(self, fit_model, X):
         '''Return model predictions.'''

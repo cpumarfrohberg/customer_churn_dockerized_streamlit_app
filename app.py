@@ -54,7 +54,7 @@ if nav == "Prediction":
         st.table(features)
     
     st.markdown(
-    """ ##### For predictions regarding your client's status in 3 months' time, please answer the following three questions. Select '0' for 'no' and '1' for 'yes'.
+    """ ##### For predictions regarding your client's status in 3 months' time, please answer the following five questions. Select '0' for 'no' and '1' for 'yes' for the first three questions, and choose appropriate values for month and year.
     """
     )
 
@@ -62,10 +62,10 @@ if nav == "Prediction":
     def load_model():
         print("loading the model")
         with open(MODEL_FILE, "rb") as file_in:
-            clf_LR = pickle.load(file_in)
-        return clf_LR
+            clf_RF = pickle.load(file_in)
+        return clf_RF
     
-    clf_LR = load_model()
+    clf_RF = load_model()
 
     col1, col2, col3 = st.columns(3)
 
@@ -88,22 +88,22 @@ if nav == "Prediction":
     col4, col5= st.columns(2)
     
     month = col4.number_input(
-    "Which month are you interested in considering (insert '1' for January, etc.)?", 
+    "For which month are you making this prediction? (1=January, 2=February, etc.)", 
     min_value = 1,
     max_value = 12,
     )
     year = col5.number_input(
-    "Which year are you interested in considering (chose between '2018' and '2020')?", 
-    min_value = 2018,
-    max_value = 2022,
+    "For which year are you making this prediction? (2025 onwards)", 
+    min_value = 2025,
+    max_value = 2030,
     )
 
     user_input = {
-        "LO_active_past_6": int(active_past_6),
-        "LO_active_post_3": int(active_post_3),
-        "LO_active_post_6": int(active_post_6),
-        "month": int(month),
-        "year": int(year),
+        "LO_Active_Employee_Post3Months": int(active_post_3),
+        "LO_Active_Employee_Prior6Months": int(active_past_6),
+        "LO_Active_Employee_Post6Months": int(active_post_6),
+        "Year": int(year),
+        "Month": int(month),
         }
 
     user_input = pd.DataFrame(
@@ -114,9 +114,15 @@ if nav == "Prediction":
 
     user_input = np.array(user_input).reshape(1, -1)
 
-    pred = clf_LR.predict(user_input)[0]
-    proba = clf_LR.predict_proba(user_input)[0]
+    pred = clf_RF.predict(user_input)[0]
+    proba = clf_RF.predict_proba(user_input)[0]
 
     if st.button("Predict"):
-        st.success(f'Your client will leave your institution in three months time with a probability of: {round(proba[1], 2)}')
+        # Calculate prediction date (3 months from input date)
+        from datetime import datetime, timedelta
+        input_date = datetime(year, month, 1)  # First day of the month
+        prediction_date = input_date + timedelta(days=90)  # Approximately 3 months
+        prediction_month_year = prediction_date.strftime("%B%y")  # Format like "April26"
+        
+        st.success(f'Your client has a {round(proba[1], 2)} probability of leaving your institution in {prediction_month_year}.')
 

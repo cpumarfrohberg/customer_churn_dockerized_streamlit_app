@@ -21,7 +21,7 @@ def main():
     
     time.sleep(2)
     logging.debug("model fit on X_train and X_val")
-    clf_LR = model_data.model_fit(
+    clf_RF = model_data.model_fit(
         X_train = X_train, 
         y_train = y_train,
         weights=WEIGHTS
@@ -30,31 +30,31 @@ def main():
     time.sleep(2)
     logging.debug("making predictions on X_train and X_val")
     pred_X_train = model_data.predictions(
-        fit_model = clf_LR,
+        fit_model = clf_RF,
         X = X_train
         )
     pred_X_val = model_data.predictions(
-        fit_model = clf_LR,
+        fit_model = clf_RF,
         X = X_val
         )
     
-    f1_score_train = f1_score(y_train, pred_X_train).round(2)
-    f1_score_val = f1_score(y_val, pred_X_val).round(2)
+    f1_score_train = round(f1_score(y_train, pred_X_train), 2)
+    f1_score_val = round(f1_score(y_val, pred_X_val), 2)
 
     time.sleep(2)
-    logging.info(f"The f1 - score based on training set is: {(f1_score_train).round(2)}")
+    logging.info(f"The f1 - score based on training set is: {f1_score_train}")
     time.sleep(2)
-    logging.info(f"The f1 - score based on validation set is: {(f1_score_val).round(2)}")
+    logging.info(f"The f1 - score based on validation set is: {f1_score_val}")
 
     time.sleep(2)   
     logging.info(f"Confusion Matrix on validation set: \n{confusion_matrix(y_val, pred_X_val)}")
     time.sleep(2)   
-    logging.info(f"Area Under Curve (validation set): {roc_auc_score(y_val, pred_X_val).round(2)}")
+    logging.info(f"Area Under Curve (validation set): {round(roc_auc_score(y_val, pred_X_val), 2)}")
 
     time.sleep(1)   
     logging.info("saving full model")
     with open("./artifacts/churn-model.bin", "wb") as f_out:
-        pickle.dump(clf_LR, f_out) 
+        pickle.dump(clf_RF, f_out) 
     time.sleep(2)   
     logging.info("full model saved as churn-model.bin")
 
