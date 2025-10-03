@@ -25,9 +25,12 @@ This project is based on a cooperation with a Savings Bank ("Caja Municipal de A
 ## For running the models locally in designated environment
 - clone repo locally
 - create an environment with the contents of the requirements.txt file (if you are using conda: install pip first via "conda install pip" and then "pip install -r requirements.txt")
+- **Train the model**: Run `python main.py` to train and save the Random Forest model
+- **Run the app**: Use `streamlit run app.py` or the Docker instructions below
 
 ## For running the app in a docker container
 - clone repo locally
+- **Train the model**: Run `python main.py` to train and save the Random Forest model
 - build image with
 `docker build -t streamlitchurnapp:latest -f docker/Dockerfile .`
 - run image with
