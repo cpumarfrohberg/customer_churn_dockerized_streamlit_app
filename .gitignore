@@ -1,12 +1,6 @@
-# Data files
+# Data files (sensitive)
 data/
 *.csv
-
-# Model artifacts
-artifacts/
-*.bin
-*.pkl
-*.joblib
 
 # Python
 __pycache__/
